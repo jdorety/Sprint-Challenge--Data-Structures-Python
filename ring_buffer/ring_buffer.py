@@ -10,7 +10,6 @@ class RingBuffer:
             self.current = 0
         else:
             self.current += 1
-        print(self.storage)
 
     def get(self):
         current_storage = []
