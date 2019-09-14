@@ -10,16 +10,12 @@ class RingBuffer:
             self.current = 0
         else:
             self.current += 1
+        print(self.storage)
 
     def get(self):
-        current_index = self.current
         current_storage = []
-        for i in range(0, self.capacity):
-            
-            if current_index <= self.capacity - 1:
-                current_storage.append(self.storage[current_index])
-                current_index += 1
-            else:
-                current_index = 0
-                current_storage.append(self.storage[current_index])
+        for i in self.storage:
+            if i is not None:
+                current_storage.append(i)
+
         return current_storage
