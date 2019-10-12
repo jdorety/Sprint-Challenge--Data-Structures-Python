@@ -12,24 +12,25 @@ class RingBuffer:
             self.current += 1
 
     def get(self):
-        pass
+        return [item for item in self.storage if item != None]
 
-buffer = RingBuffer(3)
 
-buffer.get()   # should return []
+# buffer = RingBuffer(3)
 
-buffer.append('a')
-buffer.append('b')
-buffer.append('c')
+# print(buffer.get())   # should return []
 
-buffer.get()   # should return ['a', 'b', 'c']
+# buffer.append('a')
+# buffer.append('b')
+# buffer.append('c')
 
-# 'd' overwrites the oldest value in the ring buffer, which is 'a'
-buffer.append('d')
+# print(buffer.get())   # should return ['a', 'b', 'c']
 
-buffer.get()   # should return ['d', 'b', 'c']
+# # 'd' overwrites the oldest value in the ring buffer, which is 'a'
+# buffer.append('d')
 
-buffer.append('e')
-buffer.append('f')
+# print(buffer.get())   # should return ['d', 'b', 'c']
 
-buffer.get()   # should return ['d', 'e', 'f']
+# buffer.append('e')
+# buffer.append('f')
+
+# print(buffer.get())   # should return ['d', 'e', 'f']
